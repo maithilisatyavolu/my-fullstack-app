@@ -7,7 +7,7 @@ function App() {
 
   // 1. Fetch tasks from the Node.js backend API
   useEffect(() => {
-    fetch('http://localhost:5000/api/tasks')
+    fetch('http://3.147.46.132:5000/api/tasks')
       .then((res) => res.json())
       .then((data) => setTasks(data))
       .catch((err) => console.error('Error fetching data:', err));
@@ -18,7 +18,7 @@ function App() {
     e.preventDefault();
     if (!newTaskTitle.trim()) return;
 
-    fetch('http://localhost:5000/api/tasks', {
+    fetch('http://3.147.46.132:5000/api/tasks', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ title: newTaskTitle }),
